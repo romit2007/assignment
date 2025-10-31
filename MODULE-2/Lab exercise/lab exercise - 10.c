@@ -12,7 +12,7 @@ int main()
     printf("Address of num = %p\n", ptr);
 
     
-    *ptr = 25;
+    *ptr = 100;
 
     printf("\nAfter modification through pointer:\n");
     printf("Value of num = %d\n", num);
@@ -20,3 +20,4 @@ int main()
 
     return 0;
 }
+
