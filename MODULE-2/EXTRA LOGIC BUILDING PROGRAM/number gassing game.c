@@ -5,20 +5,24 @@
 int main()
 {
     int num, guess,attempts=0,i;
+    
 
 
     srand (time(0));
     num = rand() % 100 + 1;
+    printf("The random number is: %d\n",num);
 
     printf("Welcome to the Number Guessing Game!\n");
     printf("I have selected a number between 1 and 100.\n");
 
 
+
+
   for(i=1;i<=10;i++)
     {
+
         printf("Enter your guess: ");
         scanf("%d", &guess);
-        attempts++;
 
         if(guess < num)
         {
