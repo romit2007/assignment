@@ -1,53 +1,51 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
+
 int main()
 {
-    int a[2][2],b[2][2],result[2][2];
-    int i,j,k;
+    int a[3][3], b[3][3], result[3][3];
+    int i, j, k;
 
-    printf("Enter 1st matrix 2*2: ");
-
-    for(i=0;i<2;i++)
+    printf("Enter elements of 1st 3x3 matrix:\n");
+    for (i = 0; i < 3; i++)
     {
-        
-       for(j=0;j<2;j++)
-       {
-            scanf("%d",&a[i][j]);
-       }
-    }
-
-     printf("Enter 2nd matrix 2*2: ");
-
-    for(i=0;i<2;i++)
-    {
-        
-       for(j=0;j<2;j++)
-       {
-            scanf("%d",&b[i][j]);
-       }
-    }
-
-    for(i=0;i<2;i++)
-    {
-        for(j=0;j<2;j++)
+        for (j = 0; j < 3; j++)
         {
-            for(k=0;k<2;k++)
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter elements of 2nd 3x3 matrix:\n");
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            result[i][j] = 0;
+            for (k = 0; k < 3; k++)
             {
-                result[i][j]=a[i][k]+b[j][k];
+                result[i][j] += a[i][k] * b[k][j];
             }
         }
     }
 
-    for(i=0;i<2;i++)
+    
+    printf("\nResultant Matrix (3x3):\n");
+    for (i = 0; i < 3; i++)
     {
-        for(j=0;j<2;j++)
+        for (j = 0; j < 3; j++)
         {
-            printf("result : %d",result[i][j]);
+            printf("%d\t", result[i][j]);
         }
-         printf("\n");
+        printf("\n");
     }
-    
-    
 
-
+    return 0;
 }
