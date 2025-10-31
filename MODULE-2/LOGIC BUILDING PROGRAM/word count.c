@@ -1,28 +1,47 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-    char str[100];
-    int i,words=0;
+    char str[200], longest[50], current[50];
+    int i = 0, j = 0, maxLen = 0, currLen = 0;
 
-    printf("Enter a string: ");
-    gets(str);
+    printf("Enter a sentence: ");
+    gets(str); 
 
-    for (i = 0; str[i] != '\0'; i++)
+    while (str[i] != '\0')
     {
-        if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+        if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
         {
-            words++;
+            current[j++] = str[i]; 
+            currLen++;
         }
+        else
+        {
+            current[j] = '\0'; 
+
+            if (currLen > maxLen)
+            {
+                maxLen = currLen;
+                strcpy(longest, current);
+            }
+
+            j = 0;
+            currLen = 0;
+        }
+        i++;
     }
 
     
-    if (i > 0 && str[i-1] != ' ' && str[i-1] != '\n' && str[i-1] != '\t')
+    current[j] = '\0';
+    if (currLen > maxLen)
     {
-        words++;
+        maxLen = currLen;
+        strcpy(longest, current);
     }
 
-    printf("\nNumber of words: %d\n", words);
+    printf("\nLongest word: %s\n", longest);
+    printf("Length of longest word: %d\n", maxLen);
 
     return 0;
 }
