@@ -29,6 +29,7 @@ int main()
     {
         if(prime(i))
         {
+            printf("\n %d",i);
             sum+=i;
         }
     }
