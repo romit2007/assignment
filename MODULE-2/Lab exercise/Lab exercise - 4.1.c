@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    float PI,r,area,circumfence;
+    float PI=3.14,r,area,circumfence;
 
     printf("\n Enter radious of circcle: ");
     scanf("%f",&r);
@@ -13,4 +13,5 @@ int main()
     printf("\n Circumfence of circle :%f",circumfence);
     
 }
+
 
