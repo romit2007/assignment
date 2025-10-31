@@ -11,16 +11,21 @@ int main()
 
     num = rn;
 
-    for (int temp = num; temp != 0; temp = temp / 10)
+    
+    int temp = num;
+    while (temp != 0)
     {
+        temp = temp / 10;
         n++;
     }
 
     
-    for (num = rn; num != 0; num = num / 10)
+    num = rn;
+    while (num != 0)
     {
         remainder = num % 10;
         sum += pow(remainder, n);
+        num = num / 10;
     }
 
     
