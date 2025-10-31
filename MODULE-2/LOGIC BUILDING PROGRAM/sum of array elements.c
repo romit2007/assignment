@@ -18,5 +18,11 @@ int main()
     {
         sum+=arr[i];
     }
-    printf("Sum of array elements: %d",sum);
+     average = (float)sum / n;
+
+    printf("\nSum of array elements: %d", sum);
+    printf("\nAverage of array elements: %.2f", average);
+
+    return 0;
 }
+
